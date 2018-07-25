@@ -1,16 +1,17 @@
 ﻿using System.Web.Mvc;
 using BootLocker.BackendCore.Features;
+using BootLocker.WebFrontend.Models;
 
 namespace BootLocker.WebFrontend.Controllers
 {
-    public class SampleController : Controller
+    public class CategoriesController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult SampleAction()
+        public ActionResult Create(VmElementCategoriesSummary model)
         {
             var sampleFeature = new SampleFeature();
             var isSuccess = sampleFeature.Execute();
