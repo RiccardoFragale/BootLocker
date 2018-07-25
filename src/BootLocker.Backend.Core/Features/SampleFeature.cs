@@ -1,6 +1,4 @@
-using System;
-
-namespace BootLocker.BackendCore.Features
+namespace BootLocker.Backend.Core.Features
 {
     public class SampleFeature : ISampleFeature
     {

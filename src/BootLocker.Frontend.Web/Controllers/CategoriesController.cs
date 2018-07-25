@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using BootLocker.BackendCore.Features;
-using BootLocker.WebFrontend.Models;
+using BootLocker.Backend.Core.Features;
+using BootLocker.Frontend.Web.Models;
 
-namespace BootLocker.WebFrontend.Controllers
+namespace BootLocker.Frontend.Web.Controllers
 {
     public class CategoriesController : Controller
     {

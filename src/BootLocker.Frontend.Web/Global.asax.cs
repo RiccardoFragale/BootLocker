@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace BootLocker.WebFrontend
+namespace BootLocker.Frontend.Web
 {
     public class Global : System.Web.HttpApplication
     {

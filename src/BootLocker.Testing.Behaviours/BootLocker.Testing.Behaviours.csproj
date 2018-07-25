@@ -54,13 +54,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BootLocker.BackendCore\BootLocker.BackendCore.csproj">
-      <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
-      <Name>BootLocker.BackendCore</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\BootLocker.Backend.Core\BootLocker.Backend.Core.csproj">
+      <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
+      <Name>BootLocker.Backend.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

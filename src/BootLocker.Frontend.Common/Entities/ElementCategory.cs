@@ -1,6 +1,7 @@
-namespace BootLocker.WebFrontend.Data
+namespace BootLocker.Frontend.Common.Entities
 {
     public class ElementCategory
     {
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using BootLocker.BackendCore.Features;
+﻿using BootLocker.Backend.Core.Features;
 using NUnit.Framework;
 
 namespace BootLocker.Testing.Behaviours

@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BootLocker.WebFrontend</RootNamespace>
-    <AssemblyName>BootLocker.WebFrontend</AssemblyName>
+    <RootNamespace>BootLocker.Frontend.Web</RootNamespace>
+    <AssemblyName>BootLocker.Frontend.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -163,7 +163,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\ElementCategory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,14 +203,18 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BootLocker.BackendCore\BootLocker.BackendCore.csproj">
-      <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
-      <Name>BootLocker.BackendCore</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Categories\Ready.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootLocker.Backend.Core\BootLocker.Backend.Core.csproj">
+      <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
+      <Name>BootLocker.Backend.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
+      <Project>{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}</Project>
+      <Name>BootLocker.Frontend.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

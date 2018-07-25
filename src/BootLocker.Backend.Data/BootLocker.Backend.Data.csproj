@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</ProjectGuid>
+    <ProjectGuid>{6B3A3E27-3711-42A7-AC99-6829871D72AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BootLocker.BackendCore</RootNamespace>
-    <AssemblyName>BootLocker.BackendCore</AssemblyName>
+    <RootNamespace>BootLocker.Backend.Data</RootNamespace>
+    <AssemblyName>BootLocker.Backend.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\BootLocker.WebFrontend\Bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\SampleFeature.cs" />
-    <Compile Include="Features\ISampleFeature.cs" />
+    <Compile Include="MainContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
+      <Project>{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}</Project>
+      <Name>BootLocker.Frontend.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

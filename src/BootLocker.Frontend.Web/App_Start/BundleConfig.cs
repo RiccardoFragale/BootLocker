@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace BootLocker.WebFrontend
+namespace BootLocker.Frontend.Web
 {
     public class BundleConfig
     {

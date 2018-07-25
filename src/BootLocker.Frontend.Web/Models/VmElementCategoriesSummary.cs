@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using BootLocker.WebFrontend.Data;
+using BootLocker.Frontend.Common.Entities;
 
-namespace BootLocker.WebFrontend.Models
+namespace BootLocker.Frontend.Web.Models
 {
     public class VmElementCategoriesSummary
     {

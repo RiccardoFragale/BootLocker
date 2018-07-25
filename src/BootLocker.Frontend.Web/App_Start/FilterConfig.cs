@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BootLocker.WebFrontend
+namespace BootLocker.Frontend.Web
 {
     public class FilterConfig
     {

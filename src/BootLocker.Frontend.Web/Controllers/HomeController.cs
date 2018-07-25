@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace BootLocker.WebFrontend.Controllers
+namespace BootLocker.Frontend.Web.Controllers
 {
     public class HomeController : Controller
     {

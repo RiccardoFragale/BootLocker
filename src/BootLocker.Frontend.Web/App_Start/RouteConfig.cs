@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BootLocker.WebFrontend
+namespace BootLocker.Frontend.Web
 {
     public class RouteConfig
     {
