@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using BootLocker.Backend.Core.Features;
@@ -20,6 +21,22 @@ namespace BootLocker.Frontend.Web.Controllers
             };
 
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(VmElementCategoryCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+                throw new NotImplementedException();
+            }
+
+            return View();
         }
     }
 }
