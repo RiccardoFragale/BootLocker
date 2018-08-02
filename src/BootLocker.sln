@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{1AA14239-6CBA-47D2-840D-8569103A6B07}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootLocker.Frontend.Common", "BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj", "{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootLocker.Frontend.Web", "BootLocker.Frontend.Web\BootLocker.Frontend.Web.csproj", "{B398DD80-3AE2-4DC9-9372-9D48506AC738}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootLocker.Backend.Api", "BootLocker.Backend.Api\BootLocker.Backend.Api.csproj", "{EE87A403-B08D-4E35-AE96-C12DD25AFAAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,8 +46,15 @@ Global
 		{B398DD80-3AE2-4DC9-9372-9D48506AC738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B398DD80-3AE2-4DC9-9372-9D48506AC738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B398DD80-3AE2-4DC9-9372-9D48506AC738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE87A403-B08D-4E35-AE96-C12DD25AFAAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE87A403-B08D-4E35-AE96-C12DD25AFAAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE87A403-B08D-4E35-AE96-C12DD25AFAAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE87A403-B08D-4E35-AE96-C12DD25AFAAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {212EE394-E09E-47F2-99CD-7B21F2981E0B}
 	EndGlobalSection
 EndGlobal
