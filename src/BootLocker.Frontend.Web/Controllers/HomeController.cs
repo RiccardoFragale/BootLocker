@@ -6,7 +6,7 @@ namespace BootLocker.Frontend.Web.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index","Sample");
+            return RedirectToAction("Index", "Categories");
         }
 
         public ActionResult About()

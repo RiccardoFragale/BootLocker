@@ -1,15 +1,15 @@
-using System.Data.Entity;
+using System.Collections.Generic;
 using BootLocker.Frontend.Common.Entities;
 
 namespace BootLocker.Backend.Data
 {
-    public class MainContainer : DbContext
+    public class MainContainer
     {
         public MainContainer()
-            : base("name=MainContainer")
         {
+            Categories = new List<ElementCategory>();
         }
 
-        public virtual DbSet<ElementCategory> Categories { get; set; }
+        public List<ElementCategory> Categories { get; set; }
     }
 }

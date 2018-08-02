@@ -35,9 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.0.5797.27534, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>C:\temp\NUGET_PACKAGES\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\temp\NUGET_PACKAGES\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -50,17 +49,21 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="SampleBehavioursTests.cs" />
+    <Compile Include="CategoriesSummaryBehaviourTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BootLocker.Backend.Core\BootLocker.Backend.Core.csproj">
       <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
       <Name>BootLocker.Backend.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
+      <Project>{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}</Project>
+      <Name>BootLocker.Frontend.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

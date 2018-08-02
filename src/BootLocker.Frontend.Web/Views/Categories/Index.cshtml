@@ -1,45 +1,38 @@
-﻿@model BootLocker.WebFrontend.Models.VmElementCategoriesSummary
+﻿@model BootLocker.Frontend.Web.Models.VmElementCategoriesSummary
 
 @{
     ViewBag.Title = "Elements' Categories";
-
 }
+
 <h2>Categories Summary</h2>
-
 <div>
-    @Html.ActionLink("New Category", "Create",null, htmlAttributes: new {@class = "btn btn-primary" })
-</div>        
-
-<br/>
-
-<table class="table">
-    <tr>
-        <th>
-            <label>Code</label>
-        </th>
-        <th>
-            <label>Name</label>
-        </th>
-        <th>
-            <label>Description</label>
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model.ElementCategories)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-        </tr>
-    }
-</table>
-
+    @Html.ActionLink("New Category", "Create", null, htmlAttributes: new { @class = "btn btn-primary" })
+</div>
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <table class="table" style="background-color:#f0f0f0">
+            <tr>
+                <th>
+                    <label>Name</label>
+                </th>
+                <th>
+                    <label>Description</label>
+                </th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model.ElementCategories)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
 

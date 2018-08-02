@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="BootLocker.WebFrontend.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="BootLocker.Frontend.Web.Global" Language="C#" %>

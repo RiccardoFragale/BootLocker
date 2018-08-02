@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 using BootLocker.Backend.Core.Features;
+using BootLocker.Frontend.Common.Entities;
 using BootLocker.Frontend.Web.Models;
 
 namespace BootLocker.Frontend.Web.Controllers
@@ -8,20 +11,15 @@ namespace BootLocker.Frontend.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
+            var summaryFeature = new CategoriesSummaryFeature();
+            IEnumerable<ElementCategory> featureResult = summaryFeature.Execute();
 
-        public ActionResult Create(VmElementCategoriesSummary model)
-        {
-            var sampleFeature = new SampleFeature();
-            var isSuccess = sampleFeature.Execute();
+            VmElementCategoriesSummary model = new VmElementCategoriesSummary
+            {
+                ElementCategories = featureResult.ToList()
+            };
 
-            return RedirectToAction("Ready", new { isSuccess });
-        }
-
-        public ActionResult Ready(bool isSuccess)
-        {
-            return View(isSuccess);
+            return View(model);
         }
     }
 }
