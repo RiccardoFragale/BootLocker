@@ -49,6 +49,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="CategoryCreateBehaviourTests.cs" />
     <Compile Include="CategoriesSummaryBehaviourTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using BootLocker.Backend.Core.Features;
@@ -33,7 +32,8 @@ namespace BootLocker.Frontend.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                throw new NotImplementedException();
+                var feature = new CategoryCreateFeature();
+                feature.Execute(model.ElementCategory);
             }
 
             return View();

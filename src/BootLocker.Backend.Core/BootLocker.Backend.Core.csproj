@@ -35,7 +35,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\CategoryCreateFeature.cs" />
     <Compile Include="Features\CategoriesSummaryFeature.cs" />
+    <Compile Include="Features\ICategoryCreateFeature.cs" />
     <Compile Include="Features\ICategoriesSummaryFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
