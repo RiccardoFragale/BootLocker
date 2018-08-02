@@ -35,9 +35,15 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\SampleFeature.cs" />
-    <Compile Include="Features\ISampleFeature.cs" />
+    <Compile Include="Features\CreateFeature.cs" />
+    <Compile Include="Features\ICreateFeature.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
+      <Project>{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}</Project>
+      <Name>BootLocker.Frontend.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

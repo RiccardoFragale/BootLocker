@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using BootLocker.Frontend.Common.Entities;
 
-namespace BootLocker.Backend.Data
+namespace BootLocker.Frontend.Common
 {
-    public class MainContainer
+    public class AppContext 
     {
-        public MainContainer()
+        public AppContext()
         {
             Categories = new List<ElementCategory>();
         }

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 using BootLocker.Backend.Core.Features;
-using BootLocker.Frontend.Web.Models;
+using BootLocker.Frontend.Common.Entities;
 
 namespace BootLocker.Frontend.Web.Controllers
 {
@@ -11,10 +11,10 @@ namespace BootLocker.Frontend.Web.Controllers
             return View();
         }
 
-        public ActionResult Create(VmElementCategoriesSummary model)
+        public ActionResult Create(ElementCategory elementCategory)
         {
-            var sampleFeature = new SampleFeature();
-            var isSuccess = sampleFeature.Execute();
+            var sampleFeature = new CreateFeature();
+            var isSuccess = sampleFeature.Execute(elementCategory);
 
             return RedirectToAction("Ready", new { isSuccess });
         }
