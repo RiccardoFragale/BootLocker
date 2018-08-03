@@ -154,7 +154,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\ElementCategoriesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +176,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BootLocker.Backend.Core\BootLocker.Backend.Core.csproj">
+      <Project>{f325cf5f-f7f3-4b4b-94ee-d0f8a0cddca6}</Project>
+      <Name>BootLocker.Backend.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
+      <Project>{8dab22ac-f6ba-43ef-8b45-160ed490aa31}</Project>
+      <Name>BootLocker.Frontend.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

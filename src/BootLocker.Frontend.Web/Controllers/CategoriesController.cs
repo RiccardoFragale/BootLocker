@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using BootLocker.Backend.Core.Features;
 using BootLocker.Frontend.Common.Entities;
@@ -9,14 +12,21 @@ namespace BootLocker.Frontend.Web.Controllers
 {
     public class CategoriesController : Controller
     {
-        public ActionResult Index()
+        static HttpClient client = new HttpClient {
+            BaseAddress = new Uri("http://localhost:50241/")
+        };
+
+        public async Task<ActionResult> Index()
         {
-            var summaryFeature = new CategoriesSummaryFeature();
-            IEnumerable<ElementCategory> featureResult = summaryFeature.Execute();
+            HttpResponseMessage response = await client.GetAsync(
+                "api/elementCategories");
+            response.EnsureSuccessStatusCode();
+
+            var featureResult = await response.Content.ReadAsAsync<List<ElementCategory>>();
 
             VmElementCategoriesSummary model = new VmElementCategoriesSummary
             {
-                ElementCategories = featureResult.ToList()
+                ElementCategories = featureResult
             };
 
             return View(model);
