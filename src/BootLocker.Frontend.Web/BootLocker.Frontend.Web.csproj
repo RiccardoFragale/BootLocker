@@ -163,6 +163,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Models\ElementCategory.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,16 +208,6 @@
   <ItemGroup>
     <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Categories\Ready.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BootLocker.Backend.Core\BootLocker.Backend.Core.csproj">
-      <Project>{F325CF5F-F7F3-4B4B-94EE-D0F8A0CDDCA6}</Project>
-      <Name>BootLocker.Backend.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BootLocker.Frontend.Common\BootLocker.Frontend.Common.csproj">
-      <Project>{8DAB22AC-F6BA-43EF-8B45-160ED490AA31}</Project>
-      <Name>BootLocker.Frontend.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Categories\Create.cshtml" />

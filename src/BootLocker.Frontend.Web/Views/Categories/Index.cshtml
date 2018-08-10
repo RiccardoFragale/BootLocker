@@ -20,20 +20,26 @@
                     <label>Name</label>
                 </th>
                 <th>
+                    <label>Guid</label>
+                </th>
+                <th>
                     <label>Description</label>
                 </th>
                 <th></th>
             </tr>
             @foreach (var item in Model.ElementCategories)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+            </tr>
             }
         </table>
     </div>

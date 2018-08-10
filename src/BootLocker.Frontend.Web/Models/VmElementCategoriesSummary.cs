@@ -1,5 +1,5 @@
+using BootLocker.Frontend.Web.Controllers;
 using System.Collections.Generic;
-using BootLocker.Frontend.Common.Entities;
 
 namespace BootLocker.Frontend.Web.Models
 {

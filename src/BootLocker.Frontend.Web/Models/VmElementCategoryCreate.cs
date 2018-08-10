@@ -1,9 +1,9 @@
-using BootLocker.Frontend.Common.Entities;
+using BootLocker.Frontend.Web.Controllers;
 
 namespace BootLocker.Frontend.Web.Models
 {
     public class VmElementCategoryCreate
     {
-        public ElementCategory ElementCategory;
+        public ElementCategory ElementCategory { get; set; }
     }
 }

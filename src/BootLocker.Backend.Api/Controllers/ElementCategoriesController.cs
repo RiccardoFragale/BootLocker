@@ -2,6 +2,7 @@
 using BootLocker.Frontend.Common.Entities;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Script.Serialization;
 
 namespace BootLocker.Backend.Api.Controllers
 {
@@ -14,6 +15,16 @@ namespace BootLocker.Backend.Api.Controllers
             IEnumerable<ElementCategory> featureResult = summaryFeature.Execute();
 
             return featureResult;
+        }
+
+        // POST api/elementCategories
+        [HttpPost]
+        public bool Post(ElementCategory value)
+        {
+            JavaScriptSerializer json_serializer = new JavaScriptSerializer();
+
+            var feature = new CategoryCreateFeature();
+            return feature.Execute(value);
         }
     }
 }

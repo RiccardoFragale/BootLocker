@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using BootLocker.Backend.Core.Features;
-using BootLocker.Frontend.Common.Entities;
 using BootLocker.Frontend.Web.Models;
 
 namespace BootLocker.Frontend.Web.Controllers
@@ -19,7 +16,7 @@ namespace BootLocker.Frontend.Web.Controllers
         public async Task<ActionResult> Index()
         {
             HttpResponseMessage response = await client.GetAsync(
-                "api/elementCategories");
+                "api/ElementCategories");
             response.EnsureSuccessStatusCode();
 
             var featureResult = await response.Content.ReadAsAsync<List<ElementCategory>>();
@@ -38,15 +35,22 @@ namespace BootLocker.Frontend.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(VmElementCategoryCreate model)
+        public async Task<ActionResult> Create(VmElementCategoryCreate model)
         {
             if (ModelState.IsValid)
             {
-                var feature = new CategoryCreateFeature();
-                feature.Execute(model.ElementCategory);
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/ElementCategories", model.ElementCategory);
+                response.EnsureSuccessStatusCode();
+
+                ElementCategory featureResult = await response.Content.ReadAsAsync<ElementCategory>();
+
+                model = new VmElementCategoryCreate
+                {
+                    ElementCategory = featureResult
+                };
             }
 
-            return View();
+            return View(model);
         }
     }
 }

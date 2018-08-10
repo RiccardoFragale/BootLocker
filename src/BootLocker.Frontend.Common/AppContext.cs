@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using BootLocker.Frontend.Common.Entities;
 
@@ -8,8 +9,8 @@ namespace BootLocker.Frontend.Common
         public AppContext()
         {
             Categories = new List<ElementCategory> {
-               new ElementCategory {Id = 1, Name = "Category1" },
-               new ElementCategory {Id = 3, Name = "Category2", Description = "test category" }
+               new ElementCategory {Id = 1, Name = "Category1", GuId = Guid.NewGuid() },
+               new ElementCategory {Id = 3, Name = "Category2", GuId = Guid.NewGuid() , Description = "test category" }
             };
         }
 
