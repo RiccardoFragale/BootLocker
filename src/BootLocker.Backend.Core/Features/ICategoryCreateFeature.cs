@@ -4,6 +4,6 @@ namespace BootLocker.Backend.Core.Features
 {
     public interface ICategoryCreateFeature
     {
-        bool Execute(ElementCategory elementCategory);
+        ElementCategory Execute(ElementCategory elementCategory);
     }
 }

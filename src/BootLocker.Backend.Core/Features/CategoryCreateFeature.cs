@@ -1,16 +1,19 @@
 
 using BootLocker.Frontend.Common;
 using BootLocker.Frontend.Common.Entities;
+using System;
 
 namespace BootLocker.Backend.Core.Features
 {
     public class CategoryCreateFeature : ICategoryCreateFeature
     {
-        public bool Execute(ElementCategory elementCategory)
+        public ElementCategory Execute(ElementCategory elementCategory)
         {
             var container = new AppContext();
-            
-            return true;
+            elementCategory.Id = 1;
+            elementCategory.GuId = Guid.NewGuid();
+
+            return elementCategory;
         }
     }
 }

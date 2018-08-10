@@ -19,7 +19,7 @@ namespace BootLocker.Backend.Api.Controllers
 
         // POST api/elementCategories
         [HttpPost]
-        public bool Post(ElementCategory value)
+        public ElementCategory Post(ElementCategory value)
         {
             JavaScriptSerializer json_serializer = new JavaScriptSerializer();
 

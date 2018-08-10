@@ -6,12 +6,12 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm("Create","Categories", FormMethod.Post)) 
+@using (Ajax.BeginForm("Create", "Categories", new AjaxOptions { HttpMethod = "post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "ajaxPlaceholder" }, new { Id = "CreateForm"}))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>ElementCategory</h4>
+        <h4>Element Category</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -31,13 +31,48 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-1">
                 <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+            <div class="col-md-1">
+                <input id="JsonCreate" type="button" value="Create Json" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
+
+
+<div id="ajaxPlaceholder">
+
+</div>
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/ajax")
+
+    <script type="text/javascript">
+
+        $("#JsonCreate").click(function (e) {
+            var form = $("#CreateForm");
+            var url = '@Url.Action("CreateJson")';
+            var updateTargetSelector = form.attr('data-ajax-update');
+
+            e.preventDefault(); // avoid to execute the actual submit of the form.
+
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: form.serialize(), // serializes the form's elements.
+                success: function (data) {
+                    $(updateTargetSelector).text(data.GuId + " - " + data.Name + " - " + data.Description);
+                }
+            });
+
+        });
+
+    </script>
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using BootLocker.Frontend.Common.Entities;
 using BootLocker.Frontend.Web.Models;
 
 namespace BootLocker.Frontend.Web.Controllers
@@ -35,22 +36,34 @@ namespace BootLocker.Frontend.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create(VmElementCategoryCreate model)
+        public async Task<PartialViewResult> Create(VmElementCategoryCreate model)
         {
+            ElementCategory featureResult = null;
             if (ModelState.IsValid)
             {
                 HttpResponseMessage response = await client.PostAsJsonAsync("api/ElementCategories", model.ElementCategory);
                 response.EnsureSuccessStatusCode();
 
-                ElementCategory featureResult = await response.Content.ReadAsAsync<ElementCategory>();
-
-                model = new VmElementCategoryCreate
-                {
-                    ElementCategory = featureResult
-                };
+                 featureResult = await response.Content.ReadAsAsync<ElementCategory>();
             }
 
-            return View(model);
+            return PartialView("CreatePartial", featureResult);
         }
+
+        [HttpPost]
+        public JsonResult CreateJson(VmElementCategoryCreate model)
+        {
+            ElementCategory featureResult = null;
+            if (ModelState.IsValid)
+            {
+                HttpResponseMessage response = client.PostAsJsonAsync("api/ElementCategories", model.ElementCategory).GetAwaiter().GetResult();
+                response.EnsureSuccessStatusCode();
+
+                featureResult = response.Content.ReadAsAsync<ElementCategory>().GetAwaiter().GetResult();
+            }
+
+            return Json(featureResult);
+        }
+
     }
 }

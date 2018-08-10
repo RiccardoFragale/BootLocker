@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.Serialization;
+using System.Web.Script.Serialization;
 
 namespace BootLocker.Frontend.Common.Entities
 {
@@ -8,6 +9,8 @@ namespace BootLocker.Frontend.Common.Entities
     {
         public int Id { get; set; }
 
+        [ScriptIgnore]
+        [DataMember]
         public Guid GuId { get; set; }
 
         [DataMember]

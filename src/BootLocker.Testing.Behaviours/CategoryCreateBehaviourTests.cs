@@ -12,14 +12,15 @@ namespace BootLocker.Testing.Behaviours
         {
             var createFeature = new CategoryCreateFeature();
 
-            ElementCategory elementCategory = new ElementCategory {
+            ElementCategory elementCategory = new ElementCategory
+            {
                 Name = "testCategory",
-                Description= "test category"
+                Description = "test category"
             };
 
             var result = createFeature.Execute(elementCategory);
 
-            Assert.IsTrue(result);
+            Assert.IsTrue(result.Id > 0);
         }
     }
 }
